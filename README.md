@@ -8,3 +8,4 @@ Current implementations:
 * **rsort**: sort `int` blazing fast.
 * **fastio**: IO with `unsigned`, blazing fast
 * **fastrand**: xorshift RNG, very fast.
+* **treap**: balanced binary search tree, with *insert*, *delete*, *rank* and *select*

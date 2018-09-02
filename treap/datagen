@@ -1,0 +1,56 @@
+#!/usr/bin/python3
+
+import sys
+import random
+
+RAND_FIRST = -100000
+RAND_LAST = 100000
+nums = {}
+sznum = 0
+
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("BAD USAGE")
+        exit(1)
+    N = int(sys.argv[1])
+    print(N)
+    for i in range(N):
+        cmd = random.randint(0, 3)
+        if sznum == 0 and cmd != 0:
+            cmd = 0 # for empty, only insert
+        if cmd == 0: # I
+            v = random.randint(RAND_FIRST, RAND_LAST)
+            sznum += 1
+            if v in nums:
+                nums[v] += 1
+            else:
+                nums[v] = 1
+            print("i %d" % v)
+        elif cmd == 1: # D
+            r = random.choice(list(nums.keys()))
+            sznum -= 1
+            if nums[r] == 1:
+                del nums[r]
+            else:
+                nums[r] -= 1
+            print("d %d" % r)
+        elif cmd == 2: # R
+            v = random.randint(RAND_FIRST, RAND_LAST)
+            rk = sum(map(lambda x : x[1], filter(lambda x : x[0] < v, nums.items())))
+            print("r %d %d" % (v, rk))
+        elif cmd == 3: # S
+            s = random.randint(1, sznum)
+            pos = 0
+            for k, v in sorted(nums.items(), key=lambda x : x[0]):
+                if s > pos and s <= pos + v:
+                    print("s %d %d" % (s, k))
+                    break
+                pos += v
+        else:
+            assert False
+
+#        ss = []
+#        for k, v in nums.items():
+#            for i in range(v):
+#                ss += [k]
+#        print(sorted(ss))
