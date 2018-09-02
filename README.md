@@ -7,3 +7,4 @@ so don't tell me about bad code style or they are not generic.
 Current implementations:
 * **rsort**: sort `int` blazing fast.
 * **fastio**: IO with `unsigned`, blazing fast
+* **fastrand**: xorshift RNG, very fast.
