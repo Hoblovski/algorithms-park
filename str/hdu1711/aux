@@ -1,0 +1,17 @@
+#!/usr/bin/python3
+
+ncases = int(input())
+for ncase in range(ncases):
+    n, m = [int(v) for v in input().split()]
+    t = input()
+    t = [int(v) for v in t.split()]
+    assert len(t) == n
+    p = input()
+    p = [int(v) for v in p.split()]
+    assert len(p) == m
+    for i in range(0, len(t)-len(p)+1):
+        if t[i:i+len(p)] == p:
+            print(i+1)
+            break
+    else:
+        print("-1")

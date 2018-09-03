@@ -1,6 +1,6 @@
 # Fast IO
 This is a fast IO library (not strictly an algorithm though).
-It's dedicated to IO with decimal `unsigned`s.
+It was dedicated to IO with decimal `unsigned`s, but now it has experimental support for signed `int`s.
 It uses `fread` and `fwrite` and also adds buffers effectively.
 
 See `fastio.cpp` for implementation, and `fastio.h` for interface.
@@ -32,3 +32,8 @@ $ time ./fastio stdio < data > data_stdio
 $ diff -sq data_fastio data_stdio # ensure we don't make mistakes
 Files data_fastio and data_stdio are identical
 ~~~
+
+# TODO
+I think in the realm of OI and ACM, inputs are clean (fxxk problem setters who give dirty data).
+Thus the error handling codes only add to the complexity.
+Rewrite code in the future.

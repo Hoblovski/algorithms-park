@@ -12,6 +12,8 @@
 //
 //	The code works but is written months ago when I was half drunk,
 //		so I don't know how exactly it works either.
+//
+//	Remember to call fastio_flush() at end of main()!
 
 // CONFIG:
 #define MAX_BUFR_SIZE 2000000

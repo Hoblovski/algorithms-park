@@ -1,0 +1,13 @@
+#!/bin/bash
+
+while true
+do
+	./datagen > datain
+	./aux < datain > auxout
+	./a.out < datain > myout
+	if ! diff -sq auxout myout
+	then
+		echo "BAD!"
+		exit 1
+	fi
+done

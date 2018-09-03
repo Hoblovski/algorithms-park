@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+
+from random import randint as R
+ncases = R(1, 10)
+print(ncases)
+for ncase in range(ncases):
+    M = R(1, 100)
+    N = R(1, 100000)
+    print(N, M)
+    for i in range(N):
+        print(R(-1, 1), end=" ")
+    print("")
+    for j in range(M):
+        print(R(-1, 1), end=" ")
+    print("")
